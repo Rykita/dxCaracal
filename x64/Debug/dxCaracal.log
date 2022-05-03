@@ -1,14 +1,4 @@
 ﻿  main.cpp
   WindowsMessageMap.cpp
-D:\Work\Experiments\dxCaracal\main.cpp(8,51): error C2664: 'void OutputDebugStringW(LPCWSTR)': cannot convert argument 1 from 'const _Elem *' to 'LPCWSTR'
-          with
-          [
-              _Elem=char
-          ]
-D:\Work\Experiments\dxCaracal\main.cpp(8,49): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\debugapi.h(62,1): message : see declaration of 'OutputDebugStringW' (compiling source file main.cpp)
 D:\Work\Experiments\dxCaracal\main.cpp(71,13): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
-D:\Work\Experiments\dxCaracal\WindowsMessageMap.cpp(16,20): error C2382: 'WindowsMessageMap::WindowsMessageMap': redefinition; different exception specifications
-D:\Work\Experiments\dxCaracal\WindowsMessageMap.h(8): message : see declaration of 'WindowsMessageMap::WindowsMessageMap'
-D:\Work\Experiments\dxCaracal\WindowsMessageMap.cpp(193,32): error C2382: 'WindowsMessageMap::operator ()': redefinition; different exception specifications
-D:\Work\Experiments\dxCaracal\WindowsMessageMap.h(9): message : see declaration of 'WindowsMessageMap::operator ()'
+  dxCaracal.vcxproj -> D:\Work\Experiments\dxCaracal\x64\Debug\dxCaracal.exe
