@@ -12,6 +12,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_CLOSE:
 		PostQuitMessage(69);
 		break;
+	case WM_KEYDOWN:
+		if (wParam == 'F')
+		{
+			SetWindowText(hWnd, L"FUCK YOU");
+		}
+		break;
+	case WM_KEYUP:
+		if (wParam == 'F')
+		{
+			SetWindowText(hWnd, L"dxCaracal Window");
+		}
+		break;
+	case WM_CHAR:
+		break;
 	}
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);
