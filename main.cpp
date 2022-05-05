@@ -50,7 +50,7 @@ int CALLBACK WinMain(
 	HINSTANCE	hInstance,
 	HINSTANCE	hPrevInstance,
 	LPSTR		lpCmdLine,
-	int			nCmdShow	)
+	int			nCmdShow)
 {
 
 	const auto pClassName = L"dxCaracal";
@@ -68,7 +68,7 @@ int CALLBACK WinMain(
 	wc.lpszMenuName = nullptr;
 	wc.lpszClassName = pClassName;
 	wc.hIconSm = nullptr;
-	RegisterClassEx( &wc );
+	RegisterClassEx(&wc);
 
 	// create window instance
 	HWND hWnd = CreateWindowEx(
@@ -85,7 +85,7 @@ int CALLBACK WinMain(
 	// message pump
 	MSG msg;
 	BOOL gResult;
-	while ( (gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
+	while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
 	{
 		// translate message sends WM_CHAR window message
 		TranslateMessage(&msg);
