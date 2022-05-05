@@ -1,3 +1,0 @@
-﻿  main.cpp
-D:\Work\Experiments\dxCaracal\main.cpp(85,13): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
-  dxCaracal.vcxproj -> D:\Work\Experiments\dxCaracal\x64\Debug\dxCaracal.exe
