@@ -7,7 +7,8 @@ int CALLBACK WinMain(
 	int			nCmdShow)
 {
 
-	Window wnd(800, 300, L"dxCaracal Window");
+	Window wnd(800, 170, L"dxCaracal Window");
+	Window wnd2(200, 650, L"dxCaracal Window2");
 
 	// message pump
 	MSG msg;
