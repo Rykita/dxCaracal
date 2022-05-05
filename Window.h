@@ -15,12 +15,12 @@ private:
 		~WindowClass();
 		WindowClass(const WindowClass&) = delete;
 		WindowClass& operator=(const WindowClass&) = delete;
-		static constexpr const char* wndClassName = L"dxCaracal Engine Window";
+		static constexpr const wchar_t* wndClassName = L"dxCaracal Engine Window";
 		static WindowClass wndClass;
 		HINSTANCE hInst;
 	};
 public:
-	Window(int width, int height, const char* name) noexcept;
+	Window(int width, int height, const wchar_t* name) noexcept;
 	~Window();
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
