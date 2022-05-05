@@ -1,4 +1,4 @@
-#include "Window.h"
+﻿#include "Window.h"
 
 int CALLBACK WinMain(
 	HINSTANCE	hInstance,
@@ -6,24 +6,38 @@ int CALLBACK WinMain(
 	LPSTR		lpCmdLine,
 	int			nCmdShow)
 {
+	try {
+		Window wnd(800, 170, "dxCaracal Window 1");
+		Window wnd2(200, 650, "dxCaracal Window 2");
 
-	Window wnd(800, 170, L"dxCaracal Window");
-	Window wnd2(200, 650, L"dxCaracal Window2");
+		// message pump
+		MSG msg;
+		BOOL gResult;
+		while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
+		{
+			// translate message sends WM_CHAR window message
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
 
-	// message pump
-	MSG msg;
-	BOOL gResult;
-	while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
-	{
-		// translate message sends WM_CHAR window message
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		if (gResult == -1)
+		{
+			return -1;
+		}
+
+		return msg.wParam;
 	}
-
-	if (gResult == -1)
+	catch (const VerboseException& e)
 	{
-		return -1;
+		MessageBox(nullptr, e.what(), e.GetType(), MB_OK | MB_ICONERROR);
 	}
-
-	return msg.wParam;
+	catch (const std::exception& e)
+	{
+		MessageBox(nullptr, e.what(), "STANDARD EXCEPTION", MB_OK | MB_ICONERROR);
+	}
+	catch (...)
+	{
+		MessageBox(nullptr, "No details available", "Unknown exception", MB_OK | MB_ICONEXCLAMATION);
+	}
+	return -1;
 }
