@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include "WindowsMessageMap.h"
+#include <sstream>
+#include <string>
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -25,6 +27,19 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_CHAR:
+		{
+			static std::string title;
+			title.push_back((char)wParam);
+			SetWindowTextA(hWnd, title.c_str());
+		}
+		break;
+	case WM_LBUTTONDOWN:
+		{
+			POINTS pt = MAKEPOINTS(lParam);
+			std::ostringstream oss;
+			oss << "(" << pt.x << "," << pt.y << ")";
+			SetWindowTextA(hWnd, oss.str().c_str());
+		}
 		break;
 	}
 
@@ -72,6 +87,7 @@ int CALLBACK WinMain(
 	BOOL gResult;
 	while ( (gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
 	{
+		// translate message sends WM_CHAR window message
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
