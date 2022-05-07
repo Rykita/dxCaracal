@@ -146,6 +146,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="VerboseException.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -153,10 +155,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaracalWin.h" />
-    <ClInclude Include="CharHelper.h" />
+    <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="VerboseException.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowsMessageMap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="dxCaracal.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\Fakerac\Downloads\firefox.ico" />
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

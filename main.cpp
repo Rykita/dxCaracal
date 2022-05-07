@@ -1,4 +1,5 @@
 ﻿#include "Window.h"
+#include <sstream>
 
 int CALLBACK WinMain(
 	HINSTANCE	hInstance,
@@ -7,8 +8,7 @@ int CALLBACK WinMain(
 	int			nCmdShow)
 {
 	try {
-		Window wnd(800, 170, "dxCaracal Window 1");
-		Window wnd2(200, 650, "dxCaracal Window 2");
+		Window wnd(680, 480, "dxCaracal Window 1");
 
 		// message pump
 		MSG msg;
@@ -18,6 +18,7 @@ int CALLBACK WinMain(
 			// translate message sends WM_CHAR window message
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+		
 		}
 
 		if (gResult == -1)
